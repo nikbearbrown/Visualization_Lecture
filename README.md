@@ -409,6 +409,184 @@ Students should create a basic interactive dashboard using a tool like Tableau o
 ### Conclusion
 This chapter equips students with the essential design principles to create effective, clear, and engaging data visualizations. While undergraduate students will gain a solid foundation in the principles of simplicity, relevance, color, storytelling, and interactivity, graduate students will be challenged to think critically about how to apply these principles to complex, real-world datasets and advanced tools.
 
+### Chapter 4: Common Data Visualization Techniques (with Python Code)
+
+For both undergraduate and graduate audiences, this chapter introduces some of the most commonly used data visualization techniques, accompanied by Python code using libraries such as Matplotlib and Seaborn. This approach combines theoretical explanations with hands-on coding practice, providing a strong foundation in data visualization. Below is a detailed expansion of each section, including Python code for generating visualizations.
+
+#### 4.1. **Histogram**
+A histogram is used to visualize the distribution of a dataset, showing the frequency of data points within specific intervals or bins.
+
+**Key Concepts**:
+- Histograms are great for understanding the shape, spread, and central tendencies of a dataset.
+- They show how data is distributed across a range of values, often used for continuous data.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+data = np.random.randn(1000)
+
+# Creating a histogram
+plt.hist(data, bins=30, color='blue', edgecolor='black')
+plt.title('Histogram of Normally Distributed Data')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Bins**: Adjusting the number of bins can provide more or less detail on how the data is distributed.
+- **Undergraduates**: Focus on understanding how the histogram shows data distribution.
+- **Graduates**: Explore how adjusting bins and distribution shapes can give insights into skewness or kurtosis.
+
+---
+
+#### 4.2. **Scatterplot**
+Scatterplots are used to visualize the relationship between two variables, showing how one variable changes with respect to another.
+
+**Key Concepts**:
+- Scatterplots are ideal for identifying correlations and trends.
+- They can highlight clusters, outliers, and general distributions.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+
+# Sample data
+x = np.random.rand(100)
+y = 2 * x + np.random.randn(100) * 0.1
+
+# Creating a scatterplot
+plt.scatter(x, y, color='green')
+plt.title('Scatterplot of Two Random Variables')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on how scatterplots reveal trends and correlations between variables.
+- **Graduates**: Introduce more advanced topics like regression lines, residuals, and how scatterplots can visualize model fits.
+
+---
+
+#### 4.3. **Box Plot (Box and Whisker Plot)**
+Box plots are used to display the distribution of data based on quartiles. They provide a five-number summary: minimum, first quartile (Q1), median, third quartile (Q3), and maximum.
+
+**Key Concepts**:
+- Box plots are excellent for visualizing the spread and detecting outliers in a dataset.
+- They give insights into the central tendency and variability.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+
+# Sample data
+data = np.random.randn(1000)
+
+# Creating a box plot
+plt.boxplot(data)
+plt.title('Box Plot of Random Data')
+plt.ylabel('Value')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on how the box plot shows central tendency (median) and variability (spread).
+- **Graduates**: Explore outlier detection and skewness using the box plot.
+
+---
+
+#### 4.4. **Heatmap**
+A heatmap is used to visualize matrix-like data, where individual values are represented as colors. Heatmaps are often used for correlation matrices or to represent intensity across a grid.
+
+**Key Concepts**:
+- Heatmaps are useful for visualizing patterns across multiple variables.
+- They are often used to show correlations between variables or geospatial data.
+
+**Python Code Example**:
+```python
+import seaborn as sns
+import numpy as np
+
+# Sample data
+data = np.random.rand(10, 12)
+
+# Creating a heatmap
+sns.heatmap(data, cmap='coolwarm', annot=True)
+plt.title('Heatmap of Random Data')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on understanding how the heatmap shows intensity and relationships.
+- **Graduates**: Discuss the use of heatmaps for complex correlation matrices and in data exploration.
+
+---
+
+#### 4.5. **Line Graph**
+Line graphs are used to visualize trends over time, showing how a variable changes as time progresses.
+
+**Key Concepts**:
+- Line graphs are ideal for time series data.
+- They are often used to track changes over continuous intervals such as time.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Creating a line graph
+plt.plot(x, y, color='red')
+plt.title('Line Graph of a Sine Wave')
+plt.xlabel('X values')
+plt.ylabel('Sine of X')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on understanding how line graphs visualize trends.
+- **Graduates**: Introduce topics like moving averages, time series decomposition, and seasonal trends.
+
+---
+
+#### 4.6. **Pie Chart**
+Pie charts are used to represent categorical data as proportions of a whole. Each slice of the pie represents a category, and the size of each slice reflects the proportion of that category.
+
+**Key Concepts**:
+- Pie charts are best for showing proportions or percentages.
+- Use pie charts sparingly, as they can sometimes make it hard to compare sizes accurately.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+
+# Sample data
+labels = ['Category A', 'Category B', 'Category C']
+sizes = [40, 35, 25]
+colors = ['gold', 'yellowgreen', 'lightcoral']
+
+# Creating a pie chart
+plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Pie Chart of Categories')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Introduce the basic usage of pie charts to represent categorical proportions.
+- **Graduates**: Discuss alternatives to pie charts (e.g., bar charts or stacked bar charts) for more precise comparison.
+
+---
+
+### Conclusion
+This chapter introduces common data visualization techniques using Python, enabling students to not only understand theoretical concepts but also apply them through coding exercises. For undergraduate students, the focus is on understanding the purpose and function of each graph, while graduate students are encouraged to explore more advanced analysis and customization techniques.
+
 
 
 
