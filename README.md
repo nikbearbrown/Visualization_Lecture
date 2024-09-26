@@ -838,6 +838,141 @@ plt.show()
 ### Conclusion
 This chapter introduces advanced data visualization techniques using Python, with an emphasis on real-world applications. For undergraduate students, the goal is to understand how these advanced visualizations work and to implement them using Python. For graduate students, the chapter offers a deeper exploration into the subtleties of data visualization, customization options, and practical applications in research or business contexts.
 
+### Chapter 6: Visualization of Different Data Types (with Python Code)
+
+Data can come in various forms, including cyclical, categorical, and numerical data, each of which requires different visualization techniques to reveal meaningful insights. In this chapter, we will discuss how to effectively visualize these data types using Python. The chapter will also feature Python code examples to provide hands-on experience for both undergraduate and graduate students.
+
+---
+
+#### 6.1. **Cyclical Data**
+Cyclical data refers to data that repeats in cycles, such as time of day, months of the year, seasons, or angles (e.g., wind directions). Properly visualizing cyclical data is critical to uncovering patterns and trends that repeat over time.
+
+**Key Concepts**:
+- **Cyclical data** has no true start or end and repeats at regular intervals.
+- Common examples include time-based data (hours, months) or directional data (angles, compass directions).
+- Effective visualizations for cyclical data often include polar plots or circular bar charts to represent cyclical nature.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Example of cyclical data: wind direction (degrees) and wind speed
+angles = np.linspace(0, 2 * np.pi, 360)
+wind_speed = np.abs(np.sin(angles) * 10)
+
+# Creating a polar plot for cyclical data
+plt.polar(angles, wind_speed, color='blue')
+plt.title('Cyclical Data: Wind Speed Over Directions')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on recognizing when data is cyclical and understanding the importance of using circular visualizations to represent it.
+- **Graduates**: Dive deeper into techniques for modeling and visualizing more complex cyclical patterns, such as seasonality in time series data (e.g., electricity consumption over the year).
+
+---
+
+#### 6.2. **Categorical Data**
+Categorical data represents discrete categories or groups and is often used for comparison across multiple categories. It is common in surveys, market research, and demographic studies.
+
+**Key Concepts**:
+- **Categorical data** is not numeric and does not have any natural order. Examples include gender, product categories, or regions.
+- Bar charts, pie charts, and stacked bar charts are typically used to visualize categorical data.
+
+**Python Code Example**:
+```python
+import matplotlib.pyplot as plt
+
+# Sample categorical data
+categories = ['Apples', 'Bananas', 'Oranges']
+counts = [50, 30, 20]
+
+# Creating a bar chart for categorical data
+plt.bar(categories, counts, color=['red', 'yellow', 'orange'])
+plt.title('Fruit Count by Category')
+plt.xlabel('Fruit Type')
+plt.ylabel('Count')
+plt.show()
+```
+
+**Advanced Categorical Visualization**: Stacked Bar Chart
+```python
+# Creating a stacked bar chart for comparing categories
+categories = ['Q1', 'Q2', 'Q3', 'Q4']
+sales_a = [20, 35, 30, 35]
+sales_b = [25, 32, 34, 20]
+
+bar_width = 0.5
+plt.bar(categories, sales_a, color='blue', label='Product A', width=bar_width)
+plt.bar(categories, sales_b, bottom=sales_a, color='green', label='Product B', width=bar_width)
+plt.title('Quarterly Sales for Two Products')
+plt.xlabel('Quarter')
+plt.ylabel('Sales')
+plt.legend()
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on understanding the differences between categories and how to compare them effectively using bar or pie charts.
+- **Graduates**: Explore more advanced techniques such as **grouped** and **stacked** bar charts for visualizing multiple categorical variables, and learn about alternative methods like **violin plots** for representing distributions of categories.
+
+---
+
+#### 6.3. **Numerical Data**
+Numerical data is continuous and can take any value within a range. It is often used to represent measurements like height, weight, temperature, and more. Numerical data visualizations reveal trends, distributions, and correlations.
+
+**Key Concepts**:
+- **Numerical data** is quantitative and can be discrete or continuous.
+- Common visualizations include histograms, line graphs, scatterplots, and box plots to represent distributions, trends, and correlations.
+
+**Python Code Example**: Line Graph for Numerical Data
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample numerical data: time and temperature
+time = np.linspace(0, 10, 100)
+temperature = np.sin(time) * 10 + 50
+
+# Creating a line graph for numerical data
+plt.plot(time, temperature, color='red')
+plt.title('Temperature Over Time')
+plt.xlabel('Time (hours)')
+plt.ylabel('Temperature (°F)')
+plt.show()
+```
+
+**Python Code Example**: Histogram for Numerical Data Distribution
+```python
+# Sample numerical data
+data = np.random.randn(1000)
+
+# Creating a histogram to visualize distribution of numerical data
+plt.hist(data, bins=30, color='purple', edgecolor='black')
+plt.title('Histogram of Normally Distributed Data')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+```
+
+**Explanation for Students**:
+- **Undergraduates**: Focus on understanding how numerical data varies over time or categories and how to choose the right visualization for the specific type of data.
+- **Graduates**: Explore advanced visualizations, such as **density plots**, for more precise representation of continuous numerical data distributions, and learn how to handle **multivariate** numerical data using heatmaps and scatterplot matrices.
+
+---
+
+### Conclusion
+This chapter equips students with a clear understanding of how to visualize different data types effectively. 
+
+- **For undergraduates**, the focus is on recognizing the type of data they are working with and selecting the appropriate visualization technique.
+- **For graduate students**, the emphasis is on advanced customization, the interpretation of complex visualizations, and insights into the underlying data structures.
+
+Python code examples provide students with the tools to implement these visualizations and explore the data on their own, bridging the gap between theoretical knowledge and practical application.
+
+
+
+
 
 
 
